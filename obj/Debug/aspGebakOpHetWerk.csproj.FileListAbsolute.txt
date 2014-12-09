@@ -1,6 +1,0 @@
-D:\Defelopment\ASP.net\aspGebakOpHetWerk\aspGebakOpHetWerk\bin\aspGebakOpHetWerk.dll.config
-D:\Defelopment\ASP.net\aspGebakOpHetWerk\aspGebakOpHetWerk\bin\aspGebakOpHetWerk.dll
-D:\Defelopment\ASP.net\aspGebakOpHetWerk\aspGebakOpHetWerk\bin\aspGebakOpHetWerk.pdb
-D:\Defelopment\ASP.net\aspGebakOpHetWerk\aspGebakOpHetWerk\obj\Debug\aspGebakOpHetWerk.csprojResolveAssemblyReference.cache
-D:\Defelopment\ASP.net\aspGebakOpHetWerk\aspGebakOpHetWerk\obj\Debug\aspGebakOpHetWerk.dll
-D:\Defelopment\ASP.net\aspGebakOpHetWerk\aspGebakOpHetWerk\obj\Debug\aspGebakOpHetWerk.pdb
