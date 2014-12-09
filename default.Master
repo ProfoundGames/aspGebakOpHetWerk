@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="default.master.cs" Inherits="aspGebakOpHetWerk._default" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="default.Master.cs" Inherits="aspGebakOpHetWerk._default" %>
 
 <!DOCTYPE html>
 
