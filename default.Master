@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="default.master.cs" Inherits="aspGebakOpHetWerk._default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Gebak Op het Werk</title>
+    <link rel="stylesheet" type="text/css" href="css/master.css" />
+    <asp:ContentPlaceHolder ID="CPHHead" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+        <div id="header">
+
+            <div id="logo">
+            </div>
+
+            <div id="menuItems">
+
+                <asp:ContentPlaceHolder ID="CPHMenuItems" runat="server"></asp:ContentPlaceHolder>
+
+            </div>
+
+            <div id="welcome" style="display: none;">
+            </div>
+
+        </div>
+
+
+        <div id="content">
+
+            <div id="contentholder">
+
+                <asp:ContentPlaceHolder ID="CPHContent" runat="server"></asp:ContentPlaceHolder>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+</html>

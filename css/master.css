@@ -1,0 +1,56 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100%;
+    background-color: white;
+    color: white;
+}
+
+#header {
+    float: left;
+    width: 100%;
+    background-color: #0B243B;
+    height: 65px;
+    position: fixed;
+    top: 0px;
+}
+
+#logo {
+    float: left;
+    width: 34%;
+    height: 65px;
+    background-color: none;
+}
+
+#menuItems {
+    float: left;
+    width: 33%;
+    height: 65px;
+    background-color: none;
+    text-align: right;
+}
+
+#welcome {
+    float: left;
+    width: 33%;
+    padding: 20px 0 20px 0;
+    background-color: none;
+}
+
+
+#content {
+    width: 100%;
+    background-color: #084B8A;
+    width: 950px;
+    margin: 75px auto 0px auto;
+    padding: 15px 10px 15px 10px;
+}
+
+#contentholder {
+    width: 100%;
+    background-color: none;
+    margin: 0px auto 0px auto;
+}
