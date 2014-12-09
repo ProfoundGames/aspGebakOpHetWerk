@@ -32,12 +32,17 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 {
                     Session["uID"] = objGebruiker.userID;
                     Session["role"] = objGebruiker.role;
-
+                    Session["notificatie"] = "Inloggen gelukt!";
+                    Session["redirect"] = "home.aspx";
                     //redirect naar de homepage
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("notificatie.aspx");
                 }
                 else
-                    Response.Redirect("home.aspx");
+                {
+                    Session["notificatie"] = "Inloggen gelukt!";
+                    Session["redirect"] = "home.aspx";
+                    Response.Redirect("notificatie.aspx");
+                }
             }
             else
             {

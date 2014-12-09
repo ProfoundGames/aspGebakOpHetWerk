@@ -11,10 +11,6 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Session["notificatie"] = "Het is gelukt!";
-            Session["redirect"] = "http://www.google.com";
-
             if (Session["notificatie"] != null)
             {
                 lblNotificatie.Text = Session["notificatie"].ToString();
@@ -23,7 +19,6 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 string objString = string.Format("5;URL={0}", Session["redirect"]);
 
                 Response.AddHeader("REFRESH", objString);
-
             }
         }
     }
