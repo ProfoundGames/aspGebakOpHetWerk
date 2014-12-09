@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace aspGebakOpHetWerk.website
+namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
 
 
