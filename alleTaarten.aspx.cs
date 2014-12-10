@@ -12,6 +12,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["role"] != null )
+            {
+                if ((bool)Session["role"])
+                {
+                    addCake.Text = "Voeg een taart toe";
+                }
+            }
+            
+            
         }
     }
 }
