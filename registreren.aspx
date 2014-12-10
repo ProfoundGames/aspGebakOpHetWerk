@@ -10,8 +10,7 @@
             <td>
                 <asp:Label ID="lblFirstname" Text="Voornaam: " runat="server"></asp:Label></td>
             <td>
-                <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
-            </td>
+                <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox></td>
         </tr>
         <tr>
             <td>
@@ -47,7 +46,6 @@
             <td>
                 <asp:TextBox ID="txtEmail" TextMode="Email" runat="server"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegExpValidatorEmail" runat="server" ErrorMessage="Email incorrect" ValidationExpression="^[1-9][0-9]{3}\s?[a-zA-Z]{2}$" ControlToValidate="txtPostalCode"></asp:RegularExpressionValidator>
-
             </td>
         </tr>
         <tr>

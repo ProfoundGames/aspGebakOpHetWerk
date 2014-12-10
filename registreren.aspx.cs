@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Security.Cryptography;
 
 namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
@@ -16,6 +17,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            string passwdString = CalculateHashedPassword(txtPassword.Text);
             GebakOphetWerkDBEntities objGOHW = new GebakOphetWerkDBEntities();
             objGOHW.gebruikers.Add(new gebruiker
             {
@@ -23,7 +25,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 middleName = txtMiddleName.Text,
                 lastName = txtLastName.Text,
                 userName = txtUsername.Text,
-                password = txtPassword.Text,
+                password = passwdString,
                 email = txtEmail.Text,
                 streetName = txtStreetName.Text,
                 houseNumber = Convert.ToInt32(txtHouseNumber.Text),
@@ -32,6 +34,14 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 city = txtCity.Text
             });
             objGOHW.SaveChanges();
+        }
+        private static string CalculateHashedPassword(string clearpwd)
+        {
+            using (var sha = SHA256.Create())
+            {
+                var computedHash = sha.ComputeHash(System.Text.Encoding.Unicode.GetBytes(clearpwd));
+                return Convert.ToBase64String(computedHash);
+            }
         }
     }
 }
