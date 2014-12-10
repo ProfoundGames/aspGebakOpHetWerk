@@ -19,6 +19,13 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
             string passwdString = CalculateHashedPassword(txtPassword.Text);
             GebakOphetWerkDBEntities objGOHW = new GebakOphetWerkDBEntities();
+
+            string objString;
+            if(txtHouseNrSuffix.Text != "")
+            {objString = txtHouseNrSuffix.Text;}
+            else
+            {objString = null;}
+
             objGOHW.gebruikers.Add(new gebruiker
             {
                 firstName = txtFirstName.Text,
@@ -29,10 +36,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 email = txtEmail.Text,
                 streetName = txtStreetName.Text,
                 houseNumber = Convert.ToInt32(txtHouseNumber.Text),
-                houseNumberSuffix = txtHouseNrSuffix.Text,
+                houseNumberSuffix = objString,
                 postalCode = txtPostalCode.Text,
                 city = txtCity.Text,
-                accountActive = true
+                accountActive = true,
             });
 
             objGOHW.SaveChanges();
