@@ -10,6 +10,7 @@
 </head>
 <body>
 
+  
     <form id="form1" runat="server">
 
         <div id="header">
@@ -19,7 +20,9 @@
 
             <div id="menuItems">
 
-                <asp:ContentPlaceHolder ID="CPHMenuItems" runat="server"></asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="CPHMenuItems" runat="server">
+
+                </asp:ContentPlaceHolder>
 
             </div>
 
@@ -38,6 +41,12 @@
             </div>
 
         </div>
+  <ul>
+  <li><a href="Home.aspx">Home</a></li>
+  <li><a href="Taarten.aspx">Taarten</a></li>
+  <li><a href="mijnProfiel.aspx">Mijn Profiel</a></li>
+  <li><a href="bestel.aspx">Bestel</a></li>
+</ul>
 
     </form>
 
