@@ -27,12 +27,18 @@
             </td>
         </tr>
         <tr>
+            <td></td>
             <td>
                 <asp:Button ID="btnLogin" Text="Login" runat="server" OnClick="btnLogin_Click" />
             </td>
             <td>
                 <asp:Label ID="lblError" Text="" runat="server"></asp:Label>
             </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <asp:Button ID="btnRegister" Text="Registreren" runat="server" /></td>
         </tr>
     </table>
 </asp:Content>

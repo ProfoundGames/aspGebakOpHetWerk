@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 
-
 namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -48,21 +47,19 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             {
                 if (txtUsername.Text == "" || txtPassword.Text == "")
                 {
-                    string errortekst = string.Format("Geen gegevens ingevoerd, Voer een gebruikersnaam en een wachtwoord in.");
+                    string errortekst = string.Format("Geen gegevens ingevoerd, Voer een username en een password in.");
                     lblError.Text = errortekst;
                     txtUsername.Focus();
                 }
                 else
                 {
-                    string errortekst = string.Format("Gebruikersnaam en/of wachtwoord is/zijn incorrect, voer de correcte gebruikersnaam in en/of het juiste wachtwoord");
+                    string errortekst = string.Format("Username en/of password is/zijn incorrect, voer de goede username in en/of het juiste password");
                     lblError.Text = errortekst;
                     txtUsername.Text = "";
                     txtPassword.Text = "";
                     txtUsername.Focus();
                 }
-
             }
-
         }
 
         private static string CalculateHashedPassword(string clearpwd)
@@ -72,6 +69,11 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 var computedHash = sha.ComputeHash(System.Text.Encoding.Unicode.GetBytes(clearpwd));
                 return Convert.ToBase64String(computedHash);
             }
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("registreren.aspx");
         }
     }
 }
