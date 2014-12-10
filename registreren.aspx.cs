@@ -13,5 +13,25 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            GebakOphetWerkDBEntities objGOHW = new GebakOphetWerkDBEntities();
+            objGOHW.gebruikers.Add(new gebruiker
+            {
+                firstName = txtFirstName.Text,
+                middleName = txtMiddleName.Text,
+                lastName = txtLastName.Text,
+                userName = txtUsername.Text,
+                password = txtPassword.Text,
+                email = txtEmail.Text,
+                streetName = txtStreetName.Text,
+                houseNumber = Convert.ToInt32(txtHouseNumber.Text),
+                houseNumberSuffix = txtHouseNrSuffix.Text,
+                postalCode = txtPostalCode.Text,
+                city = txtCity.Text
+            });
+            objGOHW.SaveChanges();
+        }
     }
 }
