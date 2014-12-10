@@ -8,6 +8,8 @@
         }
     </style>
 
+    <link href="css/alleTaarten.css" rel="stylesheet" />
+
 </asp:Content>
 
 
@@ -18,9 +20,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHContent" runat="server">
     <table style="width: 100%; text-align: center;">
         <tr>
-            <td style="width: 33%">
-                <a href="#">
-                    <asp:Label ID="addCake" runat="server" Text=""></asp:Label></a></td>
+            <td style="width: 33%"><a href="taartToegeven.aspx"><asp:Label ID="addCake" runat="server" Text=""></asp:Label></a></td>
             <td style="width: 33%"></td>
             <td style="width: 33%"></td>
         </tr>
