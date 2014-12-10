@@ -31,9 +31,16 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 houseNumber = Convert.ToInt32(txtHouseNumber.Text),
                 houseNumberSuffix = txtHouseNrSuffix.Text,
                 postalCode = txtPostalCode.Text,
-                city = txtCity.Text
+                city = txtCity.Text,
+                accountActive = true
             });
+
             objGOHW.SaveChanges();
+
+            Session["notificatie"] = "Gebruiker Geregistreerd, u word doorgestuurd naar de homepage.";
+            Session["redirect"] = "home.aspx";
+            Response.Redirect("notificatie.aspx");
+
         }
         private static string CalculateHashedPassword(string clearpwd)
         {
