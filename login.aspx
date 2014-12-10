@@ -38,7 +38,7 @@
         <tr>
             <td></td>
             <td>
-                <asp:Button ID="btnRegister" Text="Registreren" runat="server" /></td>
+                <asp:Button ID="btnRegister" Text="Registreren" runat="server" OnClick="btnRegister_Click" /></td>
         </tr>
     </table>
 </asp:Content>
