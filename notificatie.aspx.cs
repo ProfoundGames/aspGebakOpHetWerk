@@ -17,7 +17,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 Session["notificatie"] = null;
 
                 string objString = string.Format("5;URL={0}", Session["redirect"]);
-
+                Session["redirect"] = null;
                 Response.AddHeader("REFRESH", objString);
             }
         }
