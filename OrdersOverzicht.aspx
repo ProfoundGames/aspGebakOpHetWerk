@@ -4,4 +4,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHMenuItems" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHContent" runat="server">
+    <asp:ListBox ID="ListBox1" runat="server" Height="224px" Width="148px"></asp:ListBox>
 </asp:Content>

@@ -18,7 +18,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             string passwdString = CalculateHashedPassword(txtPassword.Text);
 
 
-            var user = from u in objGebaksModel.gebruikers
+            var user = from u in objGebaksModel.gebruiker
                        where u.password == passwdString && u.userName == usrString
                        select u;
 

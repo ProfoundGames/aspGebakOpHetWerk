@@ -11,7 +11,14 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
 
+            var Orders = from o in objGebaksModel.orderItem
+                         from t in objGebaksModel.taart 
+                         select new { taarten = o.taart, order = o.order, aantal = o.amount };
+
+            ListBox1.DataSource = Orders.ToString();
+            ListBox1.DataBind();
         }
     }
 }
