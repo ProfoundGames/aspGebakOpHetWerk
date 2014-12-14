@@ -26,7 +26,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             else
             {objString = null;}
 
-            objGOHW.gebruiker.Add(new gebruiker
+            objGOHW.gebruikers.Add(new gebruiker
             {
                 firstName = txtFirstName.Text,
                 middleName = txtMiddleName.Text,
