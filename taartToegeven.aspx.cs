@@ -10,23 +10,8 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     public partial class WebForm8 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {   
-            if(Checks.CheckLoggedin())
-            {
-                if (Checks.CheckAdmin())
-                {
-
-                }
-                else
-                {
-                    Response.Redirect("home.aspx");
-                }
-                
-            }
-            else
-            {
-                Response.Redirect("home.aspx");
-            }
+        {
+            Checks.Redirect();
             
             
 
