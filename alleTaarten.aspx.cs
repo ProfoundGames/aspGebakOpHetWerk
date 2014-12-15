@@ -52,18 +52,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void btnBestel_Click(object sender, EventArgs e)
         {
-
-            int test = (int)Session["uID"];
-
-            entity.orders.Add(new order
-            {
-                userID = Convert.ToInt32(Session["uID"]),
-                orderDate = DateTime.Today
-            });
-            Session["TempOrderID"] = Convert.ToInt32(entity.orders.Last().orderID);
-            entity.SaveChanges();
-
-
+            Response.Redirect("bestel.aspx");
         }
     }
 }
