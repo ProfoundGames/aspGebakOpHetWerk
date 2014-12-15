@@ -5,7 +5,7 @@ using System.Web;
 
 namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
-    public class Logincheck
+    public class Checks
     {
         public static void CheckLogin()
         {
@@ -13,6 +13,11 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             {
                 HttpContext.Current.Response.Redirect("login.aspx");
             }
+        }
+
+        public static void addMenu()
+        {
+            
         }
     }
 }

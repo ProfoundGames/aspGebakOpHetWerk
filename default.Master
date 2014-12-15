@@ -12,23 +12,25 @@
 
   
     <form id="form1" runat="server">
-
+        
         <div id="header">
 
             <div id="logo">
             </div>
 
             <div id="menuItems">
-                
+                <asp:SiteMapDataSource id="nav1" runat="server" />
         <asp:ContentPlaceHolder ID="ContentPlaceHolderMenu" runat="server">
-             <asp:Menu ID="MenuTop" Orientation="horizontal" runat="server" BackColor="#000000" DynamicHorizontalOffset="0" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#ffffff" StaticSubMenuIndent="10px">
+             <asp:Menu DataSourceID="nav1" ID="MenuTop" Orientation="horizontal" runat="server" BackColor="#000000" DynamicHorizontalOffset="0" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#ffffff" StaticSubMenuIndent="10px">
         <DynamicHoverStyle BackColor="#808080" ForeColor="White" />
         <DynamicMenuItemStyle HorizontalPadding="50px" VerticalPadding="2px" />
         <DynamicMenuStyle BackColor="#000000" />
         <DynamicSelectedStyle BackColor="#808080" />
-        <Items>
+                 
+<%--        <Items>
+            
             <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/aspGebakOpHetWerk/home.aspx">
-                <asp:MenuItem Text="Mijn Profiel" Value="Mijn Profiel"  NavigateUrl="~/aspGebakOpHetWerk/mijnProfiel.aspx"></asp:MenuItem>
+                <asp:MenuItem  Text="Mijn Profiel"  Value="Mijn Profiel" NavigateUrl="~/aspGebakOpHetWerk/mijnProfiel.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Mijn Bestellingen" Value="Mijn Bestellingen" NavigateUrl="~/aspGebakOpHetWerk/MijnBestellingen.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Uitloggen" Value="Uitloggen" NavigateUrl="~/aspGebakOpHetWerk/login.aspx"></asp:MenuItem>
             </asp:MenuItem>
@@ -37,7 +39,7 @@
             </asp:MenuItem>
 
             <asp:MenuItem Text="Uitloggen" Value="Uitloggen" NavigateUrl="~/aspGebakOpHetWerk/login.aspx"></asp:MenuItem>
-        </Items>
+        </Items>--%>
 
         <StaticHoverStyle BackColor="#808080" ForeColor="White" />
         <StaticMenuItemStyle HorizontalPadding="50px" VerticalPadding="2px" />
