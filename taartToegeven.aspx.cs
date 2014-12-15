@@ -10,16 +10,26 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     public partial class WebForm8 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if(Checks.CheckAdmin())
-            { 
+        {   
+            if(Checks.CheckLoggedin())
+            {
+                if (Checks.CheckAdmin())
+                {
 
+                }
+                else
+                {
+                    Response.Redirect("home.aspx");
+                }
+                
             }
             else
             {
-                HttpContext.Current.Response.Redirect("home.aspx");
+                Response.Redirect("home.aspx");
             }
             
+            
+
         }
 
         protected void btnTaartToevoegen_Click(object sender, EventArgs e)

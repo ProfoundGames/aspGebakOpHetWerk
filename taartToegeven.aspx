@@ -4,9 +4,9 @@
         .auto-style1 {
             height: 23px;
         }
-        .auto-style2 {
-            height: 26px;
-        }
+    .auto-style2 {
+        height: 26px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHMenuItems" runat="server">

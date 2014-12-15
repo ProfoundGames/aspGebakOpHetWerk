@@ -10,6 +10,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Session.Abandon();
+        }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
@@ -76,6 +80,8 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
             Response.Redirect("registreren.aspx");
         }
+
+
 
 
     }

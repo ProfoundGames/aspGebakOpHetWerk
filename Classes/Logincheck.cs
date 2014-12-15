@@ -6,22 +6,31 @@ using System.Web;
 namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public class Checks
-    {
+    {       
         public static bool CheckAdmin()
         {
-            if (HttpContext.Current.Session["uID"] == null || HttpContext.Current.Session["role"] == null)
+            if((bool)HttpContext.Current.Session["role"])
             {
-                HttpContext.Current.Response.Redirect("login.aspx");
-                return false;
-            }
-            else if((bool)HttpContext.Current.Session["role"])
-            {
-                return true;                              
+                return true;
+               
             }
             else 
             {               
                 return false;
+                
 
+            }
+        }
+
+       public static bool CheckLoggedin()
+        {
+            if(HttpContext.Current.Session["uID"] == null || HttpContext.Current.Session["role"] == null)
+            {               
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
         
