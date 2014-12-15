@@ -11,14 +11,14 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk.Classes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Checks.CheckLoggedin())
+            if (Checks.CheckLoggedin())
             {
                MenuItem Inloggen =  MenuTop.FindItem(@"Inloggen");
                MenuItem Registreren = MenuTop.FindItem(@"Registreren");
                MenuTop.Items.Remove(Inloggen);
                MenuTop.Items.Remove(Registreren);
-                
-                if(Checks.CheckAdmin())
+
+               if (Checks.CheckAdmin())
                 {
                     
                 }
@@ -27,10 +27,11 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk.Classes
                    
                     MenuItem TaartBeheer = MenuTop.FindItem(@"TaartBeheer");
                     MenuItem GebruikersBeheer = MenuTop.FindItem(@"GebruikersBeheer");
-                    MenuItem Bestellingen = MenuTop.FindItem(@"Bestellingen");
+                    MenuItem Bestellingen = MenuTop.FindItem(@"Bestellingen");                   
                     MenuTop.Items.Remove(Bestellingen);
                     MenuTop.Items.Remove(GebruikersBeheer);
                     MenuTop.Items.Remove(TaartBeheer);
+
                 }
             }
             else
@@ -39,12 +40,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk.Classes
                 MenuItem TaartBeheer = MenuTop.FindItem(@"TaartBeheer");
                 MenuItem GebruikersBeheer = MenuTop.FindItem(@"GebruikersBeheer");
                 MenuItem Bestellingen = MenuTop.FindItem(@"Bestellingen");
-                MenuItem Uitloggen = MenuTop.FindItem(@"Uitloggen");              
-                MenuTop.Items.Remove(GebruikersBeheer);
-                MenuTop.Items.Remove(Username);
-                MenuTop.Items.Remove(TaartBeheer);
-                MenuTop.Items.Remove(Uitloggen);
-                MenuTop.Items.Remove(Bestellingen);
+                MenuItem Uitloggen = MenuTop.FindItem(@"Uitloggen");
+                if (Bestellingen != null)
+                {
+                    MenuTop.Items.Remove(GebruikersBeheer);
+                    MenuTop.Items.Remove(Username);
+                    MenuTop.Items.Remove(TaartBeheer);
+                    MenuTop.Items.Remove(Uitloggen);
+                    MenuTop.Items.Remove(Bestellingen);
+                }
 
 
             }

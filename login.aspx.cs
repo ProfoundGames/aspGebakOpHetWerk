@@ -16,54 +16,57 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
-            
-
-            string usrString = txtUsername.Text.ToLower();
-            string passwdString = CalculateHashedPassword(txtPassword.Text);
-
-
-            var user = from u in objGebaksModel.gebruikers
-                       where u.password == passwdString && u.userName == usrString
-                       select u;
-
-            if (user.Any())
             {
-                gebruiker objGebruiker = (gebruiker)user.First();
+                GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
 
-                //Session maken
-                if (Session.IsNewSession)//als er nog geen session bestaat dit doen
+
+                string usrString = txtUsername.Text.ToLower();
+                string passwdString = CalculateHashedPassword(txtPassword.Text);
+
+
+                var user = from u in objGebaksModel.gebruikers
+                           where u.password == passwdString && u.userName == usrString
+                           select u;
+
+                if (user.Any())
                 {
-                    Session["uID"] = objGebruiker.userID;
-                    Session["role"] = objGebruiker.role;
-                    Session["notificatie"] = "Inloggen gelukt!";
-                    Session["redirect"] = "home.aspx";
-                    //redirect naar de homepage
-                    Response.Redirect("notificatie.aspx");
+                    gebruiker objGebruiker = (gebruiker)user.First();
+
+                    //Session maken
+                    if (Session.IsNewSession)//als er nog geen session bestaat dit doen
+                    {
+                        Session["uID"] = objGebruiker.userID;
+                        Session["role"] = objGebruiker.role;
+                        Session["notificatie"] = "Inloggen gelukt!";
+                        Session["redirect"] = "home.aspx";
+                        //redirect naar de homepage
+                        Response.Redirect("notificatie.aspx");
+                    }
+                    else
+                    {
+                        Session["notificatie"] = "Inloggen gelukt!";
+                        Session["redirect"] = "home.aspx";
+                        Response.Redirect("notificatie.aspx");
+                    }
                 }
                 else
                 {
-                    Session["notificatie"] = "Inloggen gelukt!";
-                    Session["redirect"] = "home.aspx";
-                    Response.Redirect("notificatie.aspx");
+                    if (txtUsername.Text == "" || txtPassword.Text == "")
+                    {
+                        string errortekst = string.Format("Geen gegevens ingevoerd, Voer een username en een password in.");
+                        lblError.Text = errortekst;
+                        txtUsername.Focus();
+                    }
+                    else
+                    {
+                        string errortekst = string.Format("Username en/of password is/zijn incorrect, voer de goede username in en/of het juiste password");
+                        lblError.Text = errortekst;
+                        txtUsername.Text = "";
+                        txtPassword.Text = "";
+                        txtUsername.Focus();
+                    }
                 }
-            }
-            else
-            {
-                if (txtUsername.Text == "" || txtPassword.Text == "")
-                {
-                    string errortekst = string.Format("Geen gegevens ingevoerd, Voer een username en een password in.");
-                    lblError.Text = errortekst;
-                    txtUsername.Focus();
-                }
-                else
-                {
-                    string errortekst = string.Format("Username en/of password is/zijn incorrect, voer de goede username in en/of het juiste password");
-                    lblError.Text = errortekst;
-                    txtUsername.Text = "";
-                    txtPassword.Text = "";
-                    txtUsername.Focus();
-                }
+
             }
         }
 

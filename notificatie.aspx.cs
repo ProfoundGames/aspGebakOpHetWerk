@@ -9,8 +9,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public partial class WebForm7 : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             if (Session["notificatie"] != null)
             {
                 lblNotificatie.Text = Session["notificatie"].ToString();

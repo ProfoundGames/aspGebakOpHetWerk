@@ -6,46 +6,47 @@ using System.Web;
 namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public class Checks
-    {       
+    {
         public static bool CheckAdmin()
         {
-            if((bool)HttpContext.Current.Session["role"])
+
+            if ((bool)HttpContext.Current.Session["role"])
             {
 
                 return true;
-               
-            }
-            else 
-            {
-                
-                return false;
-                             
 
-            }
-        }
-
-       public static bool CheckLoggedin()
-        {
-            if(HttpContext.Current.Session["uID"] == null || HttpContext.Current.Session["role"] == null)
-            {
-                
-                return false;
-                
             }
             else
             {
-                
+
+                return false;
+
+
+            }
+        }
+
+        public static bool CheckLoggedin()
+        {
+            if ((HttpContext.Current.Session["role"]) != null)
+            {
+
                 return true;
+
+            }
+            else
+            {
+
+                return false;
             }
 
-      
+
         }
-        
+
         public static void Redirect()
-       {
-           if(Checks.CheckLoggedin())
+        {
+            if (CheckLoggedin())
             {
-                if (Checks.CheckAdmin())
+                if (CheckAdmin())
                 {
 
                 }
@@ -53,12 +54,12 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 {
                     HttpContext.Current.Response.Redirect("home.aspx");
                 }
-                
+
             }
             else
             {
                 HttpContext.Current.Response.Redirect("home.aspx");
             }
-       }
+        }
     }
 }
