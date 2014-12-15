@@ -13,6 +13,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
+            
 
             string usrString = txtUsername.Text.ToLower();
             string passwdString = CalculateHashedPassword(txtPassword.Text);
