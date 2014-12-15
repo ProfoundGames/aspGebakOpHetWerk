@@ -31,6 +31,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         protected global::System.Web.UI.WebControls.TextBox txtTaartnaam;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// lbBeschrijving control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBeschrijving;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// lbPrijs control.
@@ -67,6 +85,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         protected global::System.Web.UI.WebControls.TextBox txtPrijs;
         
         /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
         /// lbActief control.
         /// </summary>
         /// <remarks>
@@ -76,22 +103,13 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         protected global::System.Web.UI.WebControls.Label lbActief;
         
         /// <summary>
-        /// rbActiefJa control.
+        /// cbActief control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbActiefJa;
-        
-        /// <summary>
-        /// rbActiefNee control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbActiefNee;
+        protected global::System.Web.UI.WebControls.CheckBox cbActief;
         
         /// <summary>
         /// LbFoto control.
@@ -101,6 +119,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LbFoto;
+        
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// btnTaartToevoegen control.

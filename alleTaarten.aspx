@@ -20,9 +20,9 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHContent" runat="server">
     <table style="width: 100%; text-align: center;">
         <tr>
-            <td style="width: 33%"><a href="taartToegeven.aspx"><asp:Label ID="addCake" runat="server" Text=""></asp:Label></a></td>
+            <td style="width: 33%"><a href="taartToegeven.aspx"><asp:Label ID="addCake" runat="server" Text="Taart toevoegen"></asp:Label></a></td>
             <td style="width: 33%"></td>
-            <td style="width: 33%"></td>
+            <td style="width: 33%">taart aanpassen: </td>
         </tr>
         <tr>
             <td colspan="3" class="auto-style1"></td>
@@ -41,10 +41,15 @@
                                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></td>
                                     <td>
                                         <asp:Label ID="cakeIDLabel" runat="server" Text='<%# Eval("cakeID") %>' /></td>
+                                    <td rowspan="2">
+                                        <div class="hideWhenUser" runat="server"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
+                                    <td rowspan="2">
+                                        <div class="hiddenWhenAdmin" runat="server">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
+
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="picureLabel" runat="server" Text='<%# Eval("picure") %>' /></td>
+                                        <asp:Label ID="picureLabel" runat="server" Text='' /></td>
                                     <td colspan="2" style="padding: 5px;">
                                         <asp:Label ID="discriptionLabel" runat="server" Text='<%# Eval("discription") %>' /></td>
                                 </tr>
@@ -62,10 +67,14 @@
                                         <asp:Label ID="nameTextBox" runat="server" Text='<%# Eval("name") %>' /></td>
                                     <td>
                                         <asp:Label ID="cakeIDLabel1" runat="server" Text='<%# Eval("cakeID") %>' /></td>
+                                    <td rowspan="2">
+                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
+                                    <td rowspan="2">
+                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="picureTextBox" runat="server" Text='<%# Eval("picure") %>' /></td>
+                                        <asp:Label ID="picureTextBox" runat="server" Text='' /></td>
                                     <td colspan="2" style="padding: 5px;">
                                         <asp:Label ID="discriptionTextBox" runat="server" Text='<%# Eval("discription") %>' /></td>
                                 </tr>
@@ -86,10 +95,14 @@
                                         <asp:Label ID="nameTextBox" runat="server" Text='<%# Eval("name") %>' /></td>
                                     <td>
                                         <asp:Label ID="cakeIDLabel1" runat="server" Text='<%# Eval("cakeID") %>' /></td>
+                                    <td rowspan="2">
+                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
+                                    <td rowspan="2">
+                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="picureTextBox" runat="server" Text='<%# Eval("picure") %>' /></td>
+                                        <asp:Label ID="picureTextBox" runat="server" Text='' /></td>
                                     <td colspan="2" style="padding: 5px;">
                                         <asp:Label ID="discriptionTextBox" runat="server" Text='<%# Eval("discription") %>' /></td>
                                 </tr>
@@ -112,10 +125,14 @@
                                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></td>
                                     <td>
                                         <asp:Label ID="cakeIDLabel" runat="server" Text='<%# Eval("cakeID") %>' /></td>
+                                    <td rowspan="2">
+                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
+                                    <td rowspan="2">
+                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="picureLabel" runat="server" Text='<%# Eval("picure") %>' /></td>
+                                        <asp:Label ID="picureLabel" runat="server" Text='' /></td>
                                     <td colspan="2" style="padding: 5px;">
                                         <asp:Label ID="discriptionLabel" runat="server" Text='<%# Eval("discription") %>' /></td>
                                 </tr>
@@ -145,18 +162,22 @@
                                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></td>
                                     <td>
                                         <asp:Label ID="cakeIDLabel" runat="server" Text='<%# Eval("cakeID") %>' /></td>
+                                    <td rowspan="2">
+                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
+                                    <td rowspan="2">
+                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="picureLabel" runat="server" Text='<%# Eval("picure") %>' /></td>
-                                    <td colspan="2" >
+                                        <asp:Label ID="picureLabel" runat="server" Text='' /></td>
+                                    <td>
                                         <asp:Label ID="discriptionLabel" runat="server" Text='<%# Eval("discription") %>' /></td>
                                 </tr>
                             </table>
                         </li>
                     </SelectedItemTemplate>
                 </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GebakOphetWerkDBConnectionString %>" SelectCommand="SELECT [name], [discription], [price], [picure], [cakeID] FROM [taart] WHERE ([active] = @active)">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GebakOphetWerkDBConnectionString %>" SelectCommand="SELECT [name], [discription], [price], [cakeID] FROM [taart] WHERE ([active] = @active)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="true" Name="active" Type="Boolean" />
                     </SelectParameters>

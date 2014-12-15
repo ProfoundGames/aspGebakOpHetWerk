@@ -12,6 +12,13 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            Session["orderID"] = 2;
+
+            GebakOphetWerkDBEntities entity = new GebakOphetWerkDBEntities();
+
+            dgvOrderReview.DataSource = entity.GetOrderList(Convert.ToInt32(Session["orderID"]));
+            dgvOrderReview.DataBind();
+
         }
     }
 }

@@ -13,8 +13,8 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
             GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
 
-            var Orders = from o in objGebaksModel.orderItem
-                         from t in objGebaksModel.taart 
+            var Orders = from o in objGebaksModel.orderItems
+                         from t in objGebaksModel.taarts 
                          select new { taarten = o.taart, order = o.order, aantal = o.amount };
 
             ListBox1.DataSource = Orders.ToString();

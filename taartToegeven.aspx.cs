@@ -16,28 +16,28 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void btnTaartToevoegen_Click(object sender, EventArgs e)
         {
-             try
+           
+            try
             {
-                GebakOphetWerkDBEntities ObjTaart = new GebakOphetWerkDBEntities();
-                string taartnaam = Convert.ToString(txtTaartnaam.Text);
-                string beschrijving = Convert.ToString(txtBeschrijving.Text);
-                double prijs = Convert.ToDouble(txtPrijs.Text);
-                //bool actief = 
+                if (Page.IsValid)
+                {
+                    GebakOphetWerkDBEntities ObjTaart = new GebakOphetWerkDBEntities();
 
-                if(txtBeschrijving.Text != null || txtBeschrijving.Text != "" || txtPrijs.Text !=null || txtPrijs.Text !="" || txtTaartnaam.Text != null || txtTaartnaam.Text != "")
-                {
-                                 
-                }
-                else
-                {
-                   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Geen lege velden!');", true);
+                    ObjTaart.taarts.Add(new taart
+                    {
+                        name = txtTaartnaam.Text,
+                        discription = txtBeschrijving.Text,
+                        price = Convert.ToDecimal(txtPrijs.Text),
+                        active = cbActief.Checked
+                    });
                 }
             }
-             catch (Exception ex)
-             {
-                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ex.Message + "');", true);
-             }
+            catch (Exception ex)
+            {
+                Session["notificatie"] = ex.Message;
+                Session["redirect"] = "taartToegeven.aspx";
 
+            }
         }
     }
 }
