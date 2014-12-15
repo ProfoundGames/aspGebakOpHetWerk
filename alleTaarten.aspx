@@ -4,7 +4,7 @@
 
     <style type="text/css">
         .auto-style1 {
-            height: 21px;
+            height: 19px;
         }
     </style>
 
@@ -22,14 +22,15 @@
         <tr>
             <td style="width: 33%"><a href="taartToegeven.aspx"><asp:Label ID="addCake" runat="server" Text="Taart toevoegen"></asp:Label></a></td>
             <td style="width: 33%"></td>
-            <td style="width: 33%">taart aanpassen: </td>
+            <td style="width: 33%; font-size:20px;">Taart aanpassen: <asp:DropDownList ID="ddlTaartAanpassen" runat="server" Width="173px">
+                </asp:DropDownList></td>
         </tr>
         <tr>
             <td colspan="3" class="auto-style1"></td>
         </tr>
         <tr>
             <td colspan="3">
-                <asp:ListView ID="ListView1" runat="server" DataKeyNames="cakeID" DataSourceID="SqlDataSource1">
+                <asp:ListView ID="ListView1" runat="server" DataKeyNames="cakeID" DataSourceID="SqlDataSource1" ClientIDMode="AutoID">
                     <AlternatingItemTemplate>
                         <li style="background-color: #FFF8DC; color: black;">
 
@@ -42,9 +43,6 @@
                                     <td>
                                         <asp:Label ID="cakeIDLabel" runat="server" Text='<%# Eval("cakeID") %>' /></td>
                                     <td rowspan="2">
-                                        <div class="hideWhenUser" runat="server"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
-                                    <td rowspan="2">
-                                        <div class="hiddenWhenAdmin" runat="server">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
 
                                 </tr>
                                 <tr>
@@ -68,9 +66,6 @@
                                     <td>
                                         <asp:Label ID="cakeIDLabel1" runat="server" Text='<%# Eval("cakeID") %>' /></td>
                                     <td rowspan="2">
-                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
-                                    <td rowspan="2">
-                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -96,9 +91,6 @@
                                     <td>
                                         <asp:Label ID="cakeIDLabel1" runat="server" Text='<%# Eval("cakeID") %>' /></td>
                                     <td rowspan="2">
-                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
-                                    <td rowspan="2">
-                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -126,9 +118,6 @@
                                     <td>
                                         <asp:Label ID="cakeIDLabel" runat="server" Text='<%# Eval("cakeID") %>' /></td>
                                     <td rowspan="2">
-                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
-                                    <td rowspan="2">
-                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -163,9 +152,6 @@
                                     <td>
                                         <asp:Label ID="cakeIDLabel" runat="server" Text='<%# Eval("cakeID") %>' /></td>
                                     <td rowspan="2">
-                                        <div class="hideWhenUser"><asp:Button Text="Taart Aanpassen" runat="server" ID="btnAanpassen" OnClick="btnAanpassen_Click"  /></div></td>
-                                    <td rowspan="2">
-                                        <div class="hiddenWhenAdmin">Aantal: <asp:TextBox ID="txtAantalTaarten" runat="server"></asp:TextBox></div></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -182,6 +168,14 @@
                         <asp:Parameter DefaultValue="true" Name="active" Type="Boolean" />
                     </SelectParameters>
                 </asp:SqlDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <asp:Button ID="btnBestel" runat="server" Text="Bestel" OnClick="btnBestel_Click" />
             </td>
         </tr>
     </table>

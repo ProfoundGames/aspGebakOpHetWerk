@@ -9,6 +9,9 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+
+        public GebakOphetWerkDBEntities entity = new GebakOphetWerkDBEntities();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,8 +21,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 {
                     addCake.Text = "Voeg een taart toe";
 
-                       
-
+                    ddlTaartAanpassen.DataSource = entity.GetTaartenList();
+                    ddlTaartAanpassen.DataTextField = "name";
+                    ddlTaartAanpassen.DataValueField = "cakeID";
+                    ddlTaartAanpassen.DataBind();
                 }
                 else
                 {
@@ -34,6 +39,30 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
 
              
+
+        }
+
+        protected void ddlTaartAanpassen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Session["editCakeID"] = ddlTaartAanpassen.SelectedValue;
+            Response.Redirect("");
+
+        }
+
+        protected void btnBestel_Click(object sender, EventArgs e)
+        {
+
+            int test = (int)Session["uID"];
+
+            entity.orders.Add(new order
+            {
+                userID = Convert.ToInt32(Session["uID"]),
+                orderDate = DateTime.Today
+            });
+            Session["TempOrderID"] = Convert.ToInt32(entity.orders.Last().orderID);
+            entity.SaveChanges();
+
 
         }
     }

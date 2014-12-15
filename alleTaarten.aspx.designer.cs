@@ -22,6 +22,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         protected global::System.Web.UI.WebControls.Label addCake;
         
         /// <summary>
+        /// ddlTaartAanpassen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTaartAanpassen;
+        
+        /// <summary>
         /// ListView1 control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,14 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
+        /// <summary>
+        /// btnBestel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBestel;
     }
 }
