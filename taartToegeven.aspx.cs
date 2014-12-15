@@ -11,7 +11,15 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Checks.CheckAdmin())
+            { 
 
+            }
+            else
+            {
+                HttpContext.Current.Response.Redirect("home.aspx");
+            }
+            
         }
 
         protected void btnTaartToevoegen_Click(object sender, EventArgs e)

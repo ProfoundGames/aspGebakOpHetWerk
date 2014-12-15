@@ -4,6 +4,9 @@
         .auto-style1 {
             height: 23px;
         }
+        .auto-style2 {
+            height: 26px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHMenuItems" runat="server">
@@ -23,15 +26,15 @@
                 <asp:Label ID="lbBeschrijving" runat="server" Text="Beschrijving:"></asp:Label></td>
             <td>
                 <asp:TextBox ID="txtBeschrijving" runat="server" Width="166px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Je bent de taart beschrijving vergeten." ControlToValidate="txtBeschrijving" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td>
+            <td class="auto-style2">
                 <asp:Label ID="lbPrijs" runat="server" Text="prijs:"></asp:Label></td>
-            <td>
+            <td class="auto-style2">
                 <asp:TextBox ID="txtPrijs" runat="server" Width="166px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Je bent de taart prijs vergeten." ControlToValidate="txtPrijs" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
 
         </tr>
