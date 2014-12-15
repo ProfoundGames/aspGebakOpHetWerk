@@ -12,7 +12,12 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            GebakOphetWerkDBEntities entity = new GebakOphetWerkDBEntities();
 
+            ddlTaartSoort.DataSource = entity.GetTaartenList();
+            ddlTaartSoort.DataTextField = "name";
+            ddlTaartSoort.DataValueField = "cakeID";
+            ddlTaartSoort.DataBind();
 
         }
     }
