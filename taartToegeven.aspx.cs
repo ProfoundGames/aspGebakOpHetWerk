@@ -30,6 +30,13 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                         price = Convert.ToDecimal(txtPrijs.Text),
                         active = cbActief.Checked
                     });
+                    ObjTaart.SaveChanges();
+                    txtTaartnaam.Text = "";
+                    txtBeschrijving.Text = "";
+                    txtPrijs.Text = "";
+                    cbActief.Checked = false;
+                    Session["notificatie"] = "Toevoegen gelukt!";
+                    Response.Redirect("notificatie.aspx");
                 }
             }
             catch (Exception ex)
