@@ -15,20 +15,12 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             {
                 Response.Redirect("login.aspx");
             }
-
-            GebakOphetWerkDBEntities objOrders = new GebakOphetWerkDBEntities();
-
-            int UserID = (int)Session["uID"];
-
-
-            var varorders = (from vo in objOrders.orders
-                             where vo.userID == UserID
-                             select objOrders.GetOrderList(vo.orderID));
-
-            dgOrders.DataSource = varorders;
-            DataBind();
-
+            else if (Session["uID"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
 
         }
+
     }
 }

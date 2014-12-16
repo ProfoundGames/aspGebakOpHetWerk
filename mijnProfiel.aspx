@@ -11,7 +11,7 @@
                 <asp:Label ID="lblFirstname" Text="Voornaam" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtFirstname" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtFirstname" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -19,7 +19,7 @@
                 <asp:Label ID="lblMiddleName" Text="Tussen Voegsel" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtMiddlename" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtMiddlename" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -27,7 +27,7 @@
                 <asp:Label ID="lblLastname" Text="Achternaam" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtLastname" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtLastname" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -35,7 +35,7 @@
                 <asp:Label ID="lblUsername" Text="Gebruikersnaam" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtUsername" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -43,7 +43,7 @@
                 <asp:Label ID="lblPassword" Text="Wachtwoord" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" ReadOnly="true" TextMode="Password" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -51,7 +51,7 @@
                 <asp:Label ID="lblCity" Text="Woonplaats" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCity" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -59,7 +59,7 @@
                 <asp:Label ID="lblStreetName" Text="Straat naam" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtStreetName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtStreetName" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -67,7 +67,7 @@
                 <asp:Label ID="lblHouseNumber" Text="Huis nummer" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtHouseNumber" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtHouseNumber" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -75,7 +75,7 @@
                 <asp:Label ID="lblSuffix" Text="Toevoeging" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtSuffix" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtSuffix" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
     </table>

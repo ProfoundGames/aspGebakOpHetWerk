@@ -11,7 +11,46 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session.IsNewSession)
+            {
+                Response.Redirect("login.aspx");
+            }
+            else if (Session["uID"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
 
+            int userID = (int)Session["uID"];
+
+            GebakOphetWerkDBEntities objProfiles = new GebakOphetWerkDBEntities();
+
+            var userInfo = (from ui in objProfiles.gebruikers
+                            where ui.userID == userID
+                            select new
+                            {
+                                firstname = ui.firstName,
+                                middlename = ui.middleName,
+                                lastname = ui.lastName,
+                                username = ui.userName,
+                                password = ui.password,
+                                city = ui.city,
+                                street = ui.streetName,
+                                houseNum = ui.houseNumber,
+                                houseNumsuffix = ui.houseNumberSuffix
+                            });
+
+            foreach (var item in userInfo)
+            {
+                txtFirstname.Text = item.firstname;
+                txtMiddlename.Text = item.middlename;
+                txtLastname.Text = item.lastname;
+                txtUsername.Text = item.username;
+                txtPassword.Text = item.password;
+                txtCity.Text = item.city;
+                txtStreetName.Text = item.street;
+                txtHouseNumber.Text = item.houseNum.ToString();
+                txtSuffix.Text = item.houseNumsuffix;
+            }
         }
     }
 }

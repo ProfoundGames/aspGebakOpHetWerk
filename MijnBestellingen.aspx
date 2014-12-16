@@ -13,7 +13,7 @@
         </tr>
         <tr>
             <td>
-                <asp:DataGrid ID="dgOrders" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
+                <asp:DataGrid ID="dgOrders" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" DataSourceID="CustOrderInfo">
                     <AlternatingItemStyle BackColor="#DCDCDC" />
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
