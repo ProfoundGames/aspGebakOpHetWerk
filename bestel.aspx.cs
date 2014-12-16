@@ -44,6 +44,9 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                     //redirect naar de homepage
                     Response.Redirect("notificatie.aspx");
                 }
+
+
+
             }
 
             if(!IsPostBack)
@@ -66,13 +69,34 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             {
                 if (Session["currentOrderID"] != null)
                 {
+
+                    int userID = Convert.ToInt32(Session["uID"]);
+
+                    var oID = from O in entity.orders
+                              where O.userID == userID
+                              orderby O.orderID descending
+                              select O;
+                    order objOrder = oID.First();
+
+                    int taartID = Convert.ToInt32(ddlTaartSoort.SelectedValue);
+                    var idTaart = from T in entity.taarts
+                                  where T.cakeID == taartID
+                                  select T;
+                    taart objTaart = idTaart.First();
+
                     entity.orderItems.Add(new orderItem
                     {
                         cakeID = Convert.ToInt32(ddlTaartSoort.SelectedValue),
                         amount = Convert.ToInt32(txtAmount.Text),
                         orderID = Convert.ToInt32(Session["currentOrderID"]),
                         TotalAmountOfMoney = CalculateTotalAmount(),
+<<<<<<< HEAD
                         
+=======
+                        order = objOrder,
+                        taart = objTaart
+
+>>>>>>> origin/master
                     });
 
                     entity.SaveChanges();
