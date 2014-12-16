@@ -17,7 +17,7 @@
             </asp:MenuItem>
             <asp:MenuItem Text="Taart Beheer" Value="TaartBeheer" Selectable="False">
                 <asp:MenuItem Text="Taart Toevoegen" Value="TaartToevoegen" NavigateUrl="~/aspGebakOpHetWerk/taartToegeven.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Taarten Beheren" Value="TaartenBeheren"></asp:MenuItem>
+                <asp:MenuItem Text="Taarten Beheren" Value="TaartenBeheren" NavigateUrl="~/aspGebakOpHetWerk/taartAanpassen.aspx"></asp:MenuItem>
             </asp:MenuItem>
             <asp:MenuItem Text="Gebruikers beheer" Value="GebruikersBeheer" Selectable="False">
                 <asp:MenuItem Text="Gebruikers Beheren" Value="GebruikersBeheren" NavigateUrl="~/aspGebakOpHetWerk/gebruikersOverzicht.aspx"></asp:MenuItem>
