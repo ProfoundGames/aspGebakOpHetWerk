@@ -20,7 +20,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void btnOrderBevestig_Click(object sender, EventArgs e)
         {
-            Response.Redirect("home.aspx");
+            Session["notificatie"] = "Bestelling Bevestigd!";
+            Session["redirect"] = "home.aspx";
+            //redirect naar de homepage
+            Response.Redirect("notificatie.aspx");
         }
     }
 }
