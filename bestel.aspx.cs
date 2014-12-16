@@ -14,6 +14,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void Page_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             //De GridView vullen
             int? tempOrderID = Convert.ToInt32(Session["currentOrderID"]);
 
@@ -26,9 +27,12 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 dgvBestellingLijst.DataSource = entity.GetOrderList(Convert.ToInt32(Session["currentOrderID"]));
                 dgvBestellingLijst.DataBind();
             }
+=======
+>>>>>>> origin/master
 
             if (Session["currentOrderID"] == null)
             {
+
                 int usrString = Convert.ToInt32(Session["uID"]);
                 var user = from u in entity.gebruikers
                            where u.userID == usrString
@@ -41,6 +45,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                     orderDate = DateTime.Today,
                     gebruiker = objGebruiker
                 });
+
                 entity.SaveChanges();
 
                 if (entity.GetOrderIdList((int)Session["uID"]) != null)
@@ -93,7 +98,19 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                                   select T;
                     taart objTaart = idTaart.First();
 
+<<<<<<< HEAD
                     orderItem objOrderItem = new orderItem();
+=======
+                    entity.orderItems.Add(new orderItem
+                    {
+                        cakeID = Convert.ToInt32(ddlTaartSoort.SelectedValue),
+                        amount = Convert.ToInt32(txtAmount.Text),
+                        orderID = Convert.ToInt32(Session["currentOrderID"]),
+                        TotalAmountOfMoney = CalculateTotalAmount(),
+
+                        order = objOrder,
+                        taart = objTaart
+>>>>>>> origin/master
 
                     objOrderItem.cakeID = Convert.ToInt32(ddlTaartSoort.SelectedValue);
                     objOrderItem.orderID = objOrder.orderID;
