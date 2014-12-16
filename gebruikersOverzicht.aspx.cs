@@ -11,7 +11,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
 
+            dgvUsers.DataSource = objGebaksModel.GetallUsers();
+            dgvUsers.DataBind();
         }
     }
 }

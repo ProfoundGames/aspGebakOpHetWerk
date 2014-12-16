@@ -4,4 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHMenuItems" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHContent" runat="server">
+    <asp:GridView ID="dgvUsers" runat="server" Width="429px">
+    </asp:GridView>
 </asp:Content>

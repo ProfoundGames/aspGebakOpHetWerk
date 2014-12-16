@@ -72,7 +72,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                         amount = Convert.ToInt32(txtAmount.Text),
                         orderID = Convert.ToInt32(Session["currentOrderID"]),
                         TotalAmountOfMoney = CalculateTotalAmount(),
-                        order
+                        
                     });
 
                     entity.SaveChanges();
