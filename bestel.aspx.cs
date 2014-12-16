@@ -9,65 +9,71 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
-
         public GebakOphetWerkDBEntities entity = new GebakOphetWerkDBEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //De GridView vullen
-            int? tempOrderID = Convert.ToInt32(Session["currentOrderID"]);
-
-            var hasOrder = from O in entity.orderItems
-                           where O.orderID == tempOrderID
-                           select O;
-
-            if (hasOrder.Any())
+            if (Checks.CheckLoggedin())
             {
-                dgvBestellingLijst.DataSource = entity.GetOrderList(Convert.ToInt32(Session["currentOrderID"]));
-                dgvBestellingLijst.DataBind();
-            }
+                //De GridView vullen
+                int? tempOrderID = Convert.ToInt32(Session["currentOrderID"]);
 
-            if (Session["currentOrderID"] == null)
-            {
-                int usrString = Convert.ToInt32(Session["uID"]);
-                var user = from u in entity.gebruikers
-                           where u.userID == usrString
-                           select u;
-                gebruiker objGebruiker = (gebruiker)user.First();
+                var hasOrder = from O in entity.orderItems
+                               where O.orderID == tempOrderID
+                               select O;
 
-                entity.orders.Add(new order
+                if (hasOrder.Any())
                 {
-                    userID = Convert.ToInt32(Session["uID"]),
-                    orderDate = DateTime.Today,
-                    gebruiker = objGebruiker
-                });
-                entity.SaveChanges();
-
-                if (entity.GetOrderIdList((int)Session["uID"]) != null)
-                {
-                    Session["currentOrderID"] = entity.GetOrderIdList((int)Session["uID"]).First();
-                }
-                else
-                {
-                    Session["notificatie"] = "Something Somewhere went terrible wrong.";
-                    Session["redirect"] = "bestel.aspx";
-                    //redirect naar de homepage
-                    Response.Redirect("notificatie.aspx");
+                    dgvBestellingLijst.DataSource = entity.GetOrderList(Convert.ToInt32(Session["currentOrderID"]));
+                    dgvBestellingLijst.DataBind();
                 }
 
+                if (Session["currentOrderID"] == null)
+                {
+                    int usrString = Convert.ToInt32(Session["uID"]);
+                    var user = from u in entity.gebruikers
+                               where u.userID == usrString
+                               select u;
+                    gebruiker objGebruiker = (gebruiker)user.First();
+
+                    entity.orders.Add(new order
+                    {
+                        userID = Convert.ToInt32(Session["uID"]),
+                        orderDate = DateTime.Today,
+                        gebruiker = objGebruiker
+                    });
+                    entity.SaveChanges();
+
+                    if (entity.GetOrderIdList((int)Session["uID"]) != null)
+                    {
+                        Session["currentOrderID"] = entity.GetOrderIdList((int)Session["uID"]).First();
+                    }
+                    else
+                    {
+                        Session["notificatie"] = "Something Somewhere went terrible wrong.";
+                        Session["redirect"] = "bestel.aspx";
+                        //redirect naar de homepage
+                        Response.Redirect("notificatie.aspx");
+                    }
 
 
+
+                }
+
+                if (!IsPostBack)
+                {
+                    ddlTaartSoort.DataSource = entity.GetTaartenList();
+                    ddlTaartSoort.DataTextField = "name";
+                    ddlTaartSoort.DataValueField = "cakeID";
+                    ddlTaartSoort.DataBind();
+                    ddlTaartSoort.SelectedIndex = 0;
+                }
+                lblTotalAmount.Text = Convert.ToString(CalculateTotalAmount());
             }
-
-            if (!IsPostBack)
+            else
             {
-                ddlTaartSoort.DataSource = entity.GetTaartenList();
-                ddlTaartSoort.DataTextField = "name";
-                ddlTaartSoort.DataValueField = "cakeID";
-                ddlTaartSoort.DataBind();
-                ddlTaartSoort.SelectedIndex = 0;
+                Response.Redirect("login.aspx");
             }
-            lblTotalAmount.Text = Convert.ToString(CalculateTotalAmount());
         }
 
         protected void btnAddToOrder_Click(object sender, EventArgs e)
@@ -110,6 +116,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                     Page_Load(sender, e);
                 }
             }
+        
         }
 
         public Decimal CalculateTotalAmount()

@@ -31,7 +31,14 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                            where u.password == passwdString && u.userName == usrString
                            select u;
 
-                if (user.Any())
+                
+                if(user.Any() && user.First().accountActive == false)
+                {
+                    string errortekst = string.Format("Uw accound is geblockeert.");
+                    lblError.Text = errortekst;
+                    txtUsername.Focus();
+                }
+                else if (user.Any())
                 {
                     gebruiker objGebruiker = (gebruiker)user.First();
 
