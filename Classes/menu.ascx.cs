@@ -13,39 +13,36 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk.Classes
         {
             if (Checks.CheckLoggedin())
             {
-               MenuItem Inloggen =  MenuTop.FindItem(@"Inloggen");
-               MenuItem Registreren = MenuTop.FindItem(@"Registreren");
-               MenuTop.Items.Remove(Inloggen);
-               MenuTop.Items.Remove(Registreren);
 
-               if (Checks.CheckAdmin())
+                MenuItem Inloggen = MenuTop.FindItem(@"Inloggen");
+                MenuItem Registreren = MenuTop.FindItem(@"Registreren");
+                if (Registreren != null)
                 {
-            if(Checks.CheckLoggedin())
-            {
-               MenuItem Inloggen =  MenuTop.FindItem(@"Inloggen");
-               MenuItem Registreren = MenuTop.FindItem(@"Registreren");
-               MenuTop.Items.Remove(Inloggen);
-               MenuTop.Items.Remove(Registreren);
-                
-                if(Checks.CheckAdmin())
+                    MenuTop.Items.Remove(Inloggen);
+                    MenuTop.Items.Remove(Registreren);
+                }
+
+                if (Checks.CheckAdmin())
                 {
 
-                    
                 }
                 else
                 {
-                   
+
                     MenuItem TaartBeheer = MenuTop.FindItem(@"TaartBeheer");
                     MenuItem GebruikersBeheer = MenuTop.FindItem(@"GebruikersBeheer");
-                    MenuItem Bestellingen = MenuTop.FindItem(@"Bestellingen");                   
-                    MenuTop.Items.Remove(Bestellingen);
-                    MenuTop.Items.Remove(GebruikersBeheer);
-                    MenuTop.Items.Remove(TaartBeheer);
-
+                    MenuItem Bestellingen = MenuTop.FindItem(@"Bestellingen");
+                    if (Bestellingen != null)
+                    {
+                        MenuTop.Items.Remove(Bestellingen);
+                        MenuTop.Items.Remove(GebruikersBeheer);
+                        MenuTop.Items.Remove(TaartBeheer);
+                    }
                 }
             }
             else
             {
+
                 MenuItem Username = MenuTop.FindItem(@"Username");
                 MenuItem TaartBeheer = MenuTop.FindItem(@"TaartBeheer");
                 MenuItem GebruikersBeheer = MenuTop.FindItem(@"GebruikersBeheer");
@@ -60,29 +57,20 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk.Classes
                     MenuTop.Items.Remove(Bestellingen);
                 }
 
-                    MenuItem TaartBeheer = MenuTop.FindItem(@"TaartBeheer");
-                    MenuItem GebruikersBeheer = MenuTop.FindItem(@"GebruikersBeheer");
-                    MenuItem Bestellingen = MenuTop.FindItem(@"Bestellingen");
-                    MenuTop.Items.Remove(Bestellingen);
-                    MenuTop.Items.Remove(GebruikersBeheer);
-                    MenuTop.Items.Remove(TaartBeheer);
-                }
+
+
             }
-            else
+            if (!string.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
             {
-                MenuItem Username = MenuTop.FindItem(@"Username");
-                MenuItem TaartBeheer = MenuTop.FindItem(@"TaartBeheer");
-                MenuItem GebruikersBeheer = MenuTop.FindItem(@"GebruikersBeheer");
-                MenuItem Bestellingen = MenuTop.FindItem(@"Bestellingen");
-                MenuItem Uitloggen = MenuTop.FindItem(@"Uitloggen");              
-                MenuTop.Items.Remove(GebruikersBeheer);
-                MenuTop.Items.Remove(Username);
-                MenuTop.Items.Remove(TaartBeheer);
-                MenuTop.Items.Remove(Uitloggen);
-                MenuTop.Items.Remove(Bestellingen);
-
-
+               string username = HttpContext.Current.User.Identity.Name;
             }
+            
         }
+
+        protected void MenuTop_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            Session.Abandon();
+        }
+       
     }
 }

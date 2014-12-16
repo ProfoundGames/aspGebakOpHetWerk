@@ -28,7 +28,7 @@
             </asp:MenuItem>
             <asp:MenuItem Text="Registreren" Value="Registreren" NavigateUrl="~/aspGebakOpHetWerk/registreren.aspx"></asp:MenuItem>
             <asp:MenuItem Text="Inloggen" Value="Inloggen" NavigateUrl="~/aspGebakOpHetWerk/login.aspx"></asp:MenuItem>
-            <asp:MenuItem Text="Uitloggen" Value="Uitloggen" NavigateUrl="~/aspGebakOpHetWerk/login.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Uitloggen" Value="Uitloggen" NavigateUrl="~/aspGebakOpHetWerk/logoutCheck.aspx"></asp:MenuItem>
         </Items>
         <StaticHoverStyle BackColor="#808080" ForeColor="White" />
         <StaticMenuItemStyle HorizontalPadding="50px" VerticalPadding="2px" />

@@ -16,7 +16,7 @@
 
             <div id="logo">
             </div>
-            <div id="menuItems">            
+            <div id="menuItems">
         <asp:ContentPlaceHolder ID="ContentPlaceHolderMenu" runat="server">
              <reg:menu runat="server"></reg:menu>
         </asp:ContentPlaceHolder>

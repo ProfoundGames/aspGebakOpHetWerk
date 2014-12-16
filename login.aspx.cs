@@ -12,7 +12,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["uID"] != null)
+            {
+                Session.Abandon();
+            }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -33,21 +36,12 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                     gebruiker objGebruiker = (gebruiker)user.First();
 
                     //Session maken
-                    if (Session.IsNewSession)//als er nog geen session bestaat dit doen
-                    {
                         Session["uID"] = objGebruiker.userID;
                         Session["role"] = objGebruiker.role;
                         Session["notificatie"] = "Inloggen gelukt!";
                         Session["redirect"] = "home.aspx";
                         //redirect naar de homepage
                         Response.Redirect("notificatie.aspx");
-                    }
-                    else
-                    {
-                        Session["notificatie"] = "Inloggen gelukt!";
-                        Session["redirect"] = "home.aspx";
-                        Response.Redirect("notificatie.aspx");
-                    }
                 }
                 else
                 {
