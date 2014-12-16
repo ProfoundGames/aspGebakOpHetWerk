@@ -22,8 +22,7 @@
         <tr>
             <td style="width: 33%"><a href="taartToegeven.aspx"><asp:Label ID="addCake" runat="server" Text="Taart toevoegen"></asp:Label></a></td>
             <td style="width: 33%"></td>
-            <td style="width: 33%; font-size:20px;">Taart aanpassen: <asp:DropDownList ID="ddlTaartAanpassen" runat="server" Width="173px">
-                </asp:DropDownList></td>
+            <td style="width: 33%; font-size:20px;"></td>
         </tr>
         <tr>
             <td colspan="3" class="auto-style1"></td>

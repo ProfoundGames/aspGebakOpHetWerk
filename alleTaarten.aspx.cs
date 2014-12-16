@@ -19,12 +19,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             {
                 if ((bool)Session["role"])
                 {
-                    addCake.Text = "Voeg een taart toe";
-
-                    ddlTaartAanpassen.DataSource = entity.GetTaartenList();
-                    ddlTaartAanpassen.DataTextField = "name";
-                    ddlTaartAanpassen.DataValueField = "cakeID";
-                    ddlTaartAanpassen.DataBind();
+                    addCake.Text = "Voeg een taart toe.";
                 }
                 else
                 {
@@ -39,14 +34,6 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
 
              
-
-        }
-
-        protected void ddlTaartAanpassen_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            Session["editCakeID"] = ddlTaartAanpassen.SelectedValue;
-            Response.Redirect("");
 
         }
 
