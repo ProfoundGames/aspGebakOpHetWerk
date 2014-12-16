@@ -61,8 +61,10 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="1">
                 <asp:Button ID="btnAddToOrder" Text="Toevoegen aan order" runat="server" Height="23px" OnClick="btnAddToOrder_Click" /></td>
+            <td>
+                <asp:Button ID="btnBevestig" runat="server" Text="Bestelling Bevestigen" OnClick="btnBevestig_Click" /></td>
         </tr>
     </table>
 </asp:Content>

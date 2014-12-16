@@ -14,6 +14,19 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //De GridView vullen
+            int? tempOrderID = Convert.ToInt32(Session["currentOrderID"]);
+
+            var hasOrder = from O in entity.orderItems
+                           where O.orderID == tempOrderID
+                           select O;
+
+            if (hasOrder.Any())
+            {
+                dgvBestellingLijst.DataSource = entity.GetOrderList(Convert.ToInt32(Session["currentOrderID"]));
+                dgvBestellingLijst.DataBind();
+            }
+
             if (Session["currentOrderID"] == null)
             {
                 int usrString = Convert.ToInt32(Session["uID"]);
@@ -42,7 +55,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                     Response.Redirect("notificatie.aspx");
                 }
 
-
+                
 
             }
 
@@ -54,10 +67,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 ddlTaartSoort.DataBind();
                 ddlTaartSoort.SelectedIndex = 0;
             }
-
             lblTotalAmount.Text = Convert.ToString(CalculateTotalAmount());
-
-
         }
 
         protected void btnAddToOrder_Click(object sender, EventArgs e)
@@ -66,6 +76,8 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             {
                 if (Session["currentOrderID"] != null)
                 {
+
+                    GebakOphetWerkDBEntities ef = new GebakOphetWerkDBEntities();
 
                     int userID = Convert.ToInt32(Session["uID"]);
 
@@ -81,22 +93,23 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                                   select T;
                     taart objTaart = idTaart.First();
 
-                    entity.orderItems.Add(new orderItem
-                    {
-                        cakeID = Convert.ToInt32(ddlTaartSoort.SelectedValue),
-                        amount = Convert.ToInt32(txtAmount.Text),
-                        orderID = objOrder.orderID,
-                        TotalAmountOfMoney = CalculateTotalAmount(),
-                        order = objOrder,
-                        taart = objTaart
+                    orderItem objOrderItem = new orderItem();
 
-                    });
+                    objOrderItem.cakeID = Convert.ToInt32(ddlTaartSoort.SelectedValue);
+                    objOrderItem.orderID = objOrder.orderID;
+                    objOrderItem.TotalAmountOfMoney = CalculateTotalAmount();
+                    objOrderItem.amount = Convert.ToInt32(txtAmount.Text);
 
-                    entity.SaveChanges();
+                    ef.orderItems.Add(objOrderItem);
+
+                    txtAmount.Text = "0";
+                    ddlTaartSoort.SelectedIndex = 0;
+
+                    ef.SaveChanges();
+
+                    Page_Load(sender, e);
                 }
-
             }
-
         }
 
         public Decimal CalculateTotalAmount()
@@ -125,6 +138,11 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         protected void txtAmount_TextChanged(object sender, EventArgs e)
         {
             lblTotalAmount.Text = Convert.ToString(CalculateTotalAmount());
+        }
+
+        protected void btnBevestig_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("bestellingBevestigen.aspx");
         }
 
     }

@@ -40,7 +40,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <asp:Button ID="btnOrderBevestig" Text="Bevestig" runat="server" /></td>
+                <asp:Button ID="btnOrderBevestig" Text="Bevestigen" runat="server" OnClick="btnOrderBevestig_Click" /></td>
         </tr>
     </table>
 
