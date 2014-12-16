@@ -13,12 +13,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
             GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
 
-            var Orders = from o in objGebaksModel.orderItems
-                         from t in objGebaksModel.taarts 
-                         select new { taarten = o.taart, order = o.order, aantal = o.amount };
+            dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(DateTime.Today);
+            dgvTotalOrders.DataBind();
 
-            ListBox1.DataSource = Orders.ToString();
-            ListBox1.DataBind();
+            
         }
     }
 }
