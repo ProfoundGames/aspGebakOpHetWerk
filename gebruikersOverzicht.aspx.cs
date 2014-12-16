@@ -20,6 +20,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
             ddlUser.DataSource = objGebaksModel.GetUsername();
             ddlUser.DataBind();
+
             }
 
         protected void btnactief_Click(object sender, EventArgs e)
