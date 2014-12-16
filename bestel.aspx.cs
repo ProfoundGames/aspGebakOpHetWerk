@@ -90,13 +90,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                         amount = Convert.ToInt32(txtAmount.Text),
                         orderID = Convert.ToInt32(Session["currentOrderID"]),
                         TotalAmountOfMoney = CalculateTotalAmount(),
-<<<<<<< HEAD
-                        
-=======
+
                         order = objOrder,
                         taart = objTaart
 
->>>>>>> origin/master
                     });
 
                     entity.SaveChanges();
