@@ -19,6 +19,8 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             {
                 Response.Redirect("login.aspx");
             }
+            int userID = (int)Session["uID"];
+
 
         }
 

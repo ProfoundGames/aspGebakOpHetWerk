@@ -78,5 +78,11 @@
                 <asp:TextBox ID="txtSuffix" ReadOnly="true" runat="server"></asp:TextBox>
             </td>
         </tr>
+        <tr>
+            <td><asp:Label ID="lblChange" Text="Gegevens aanpassen" runat="server"></asp:Label></td>
+            <td>
+                <asp:Button ID="btnChange" Text="Edit" runat="server" OnClick="btnChange_Click" />
+            </td>
+        </tr>
     </table>
 </asp:Content>

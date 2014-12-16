@@ -52,5 +52,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                 txtSuffix.Text = item.houseNumsuffix;
             }
         }
+
+        protected void btnChange_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
