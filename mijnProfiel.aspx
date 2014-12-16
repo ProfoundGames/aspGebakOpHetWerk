@@ -5,6 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHMenuItems" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHContent" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+
     <table runat="server">
         <tr>
             <td>
@@ -40,14 +43,6 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="lblPassword" Text="Wachtwoord" runat="server"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="txtPassword" ReadOnly="true" TextMode="Password" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <asp:Label ID="lblCity" Text="Woonplaats" runat="server"></asp:Label>
             </td>
             <td>
@@ -79,9 +74,20 @@
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lblChange" Text="Gegevens aanpassen" runat="server"></asp:Label></td>
+            <td>
+                <asp:Label ID="lblPostcode" Text="Postcode" runat="server"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtPostcode" ReadOnly="true" runat="server"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegExpValidatorPostalCode" runat="server" ErrorMessage="Postcode incorrect" ValidationExpression="^[1-9][0-9]{3}\s?[a-zA-Z]{2}$" ControlToValidate="txtPostCode"></asp:RegularExpressionValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="lblChange" Text="Gegevens aanpassen" runat="server"></asp:Label></td>
             <td>
                 <asp:Button ID="btnChange" Text="Edit" runat="server" OnClick="btnChange_Click" />
+                <asp:Button ID="btnSaveChange" UseSubmitBehavior="false" Text="Save Changes" Visible="false" runat="server" OnClick="btnSaveChange_Click" />
             </td>
         </tr>
     </table>
