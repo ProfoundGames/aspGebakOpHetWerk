@@ -25,6 +25,8 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
                     addCake.Text = "";
                 }
             }
+            else
+                addCake.Text = "";
         }
 
         protected void btnBestel_Click(object sender, EventArgs e)

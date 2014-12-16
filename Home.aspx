@@ -4,4 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHMenuItems" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CPHContent" runat="server">
+    <table style="text-align:center; width: 100%; height: 250px;">
+        <tr>
+            <td>Welkom bij Gebak op het werk.</td>
+        </tr>
+    </table>
 </asp:Content>
