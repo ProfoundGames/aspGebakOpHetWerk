@@ -9,9 +9,5 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public partial class WebForm14 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
