@@ -35,7 +35,7 @@
 
                             <table style="width: 100%;">
                                 <tr>
-                                    <td>
+                                    <td style="width: 75px;">
                                         <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' /></td>
                                     <td>
                                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></td>
@@ -58,7 +58,7 @@
 
                             <table style="width: 100%;">
                                 <tr>
-                                    <td>
+                                    <td style="width: 75px;">
                                         <asp:Label ID="priceTextBox" runat="server" Text='<%# Eval("price") %>' /></td>
                                     <td>
                                         <asp:Label ID="nameTextBox" runat="server" Text='<%# Eval("name") %>' /></td>
@@ -83,7 +83,7 @@
 
                             <table style="width: 100%;">
                                 <tr>
-                                    <td>
+                                    <td style="width: 75px;">
                                         <asp:Label ID="priceTextBox" runat="server" Text='<%# Eval("price") %>' /></td>
                                     <td>
                                         <asp:Label ID="nameTextBox" runat="server" Text='<%# Eval("name") %>' /></td>
@@ -110,7 +110,7 @@
 
                             <table style="width: 100%;">
                                 <tr>
-                                    <td>
+                                    <td style="width: 75px;">
                                         <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' /></td>
                                     <td>
                                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></td>
