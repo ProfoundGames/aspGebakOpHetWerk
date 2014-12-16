@@ -9,16 +9,106 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+
+        public GebakOphetWerkDBEntities entity = new GebakOphetWerkDBEntities();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            GebakOphetWerkDBEntities entity = new GebakOphetWerkDBEntities();
+            if (Session["currentOrderID"] == null)
+            {
 
-            ddlTaartSoort.DataSource = entity.GetTaartenList();
-            ddlTaartSoort.DataTextField = "name";
-            ddlTaartSoort.DataValueField = "cakeID";
-            ddlTaartSoort.DataBind();
+                int usrString = Convert.ToInt32(Session["uID"]);
+                var user = from u in entity.gebruikers
+                           where u.userID == usrString
+                           select u;
+                gebruiker objGebruiker = (gebruiker)user.First();
+
+                entity.orders.Add(new order
+                {
+                    userID = Convert.ToInt32(Session["uID"]),
+                    orderDate = DateTime.Today,
+                    gebruiker = objGebruiker
+                });
+
+                entity.SaveChanges();
+
+                if (entity.GetOrderIdList((int)Session["uID"]) != null)
+                {
+                    Session["currentOrderID"] = entity.GetOrderIdList((int)Session["uID"]).First();
+                }
+                else
+                {
+                    Session["notificatie"] = "Something Somewhere went terrible wrong.";
+                    Session["redirect"] = "bestel.aspx";
+                    //redirect naar de homepage
+                    Response.Redirect("notificatie.aspx");
+                }
+            }
+
+            if(!IsPostBack)
+            {
+                ddlTaartSoort.DataSource = entity.GetTaartenList();
+                ddlTaartSoort.DataTextField = "name";
+                ddlTaartSoort.DataValueField = "cakeID";
+                ddlTaartSoort.DataBind();
+                ddlTaartSoort.SelectedIndex = 0;
+            }
+
+            lblTotalAmount.Text = Convert.ToString(CalculateTotalAmount());
+
 
         }
+
+        protected void btnAddToOrder_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                if (Session["currentOrderID"] != null)
+                {
+                    entity.orderItems.Add(new orderItem
+                    {
+                        cakeID = Convert.ToInt32(ddlTaartSoort.SelectedValue),
+                        amount = Convert.ToInt32(txtAmount.Text),
+                        orderID = Convert.ToInt32(Session["currentOrderID"]),
+                        TotalAmountOfMoney = CalculateTotalAmount(),
+                        order
+                    });
+
+                    entity.SaveChanges();
+                }
+
+            }
+
+        }
+
+        public Decimal CalculateTotalAmount()
+        {
+            if (entity.GetCakePrice(Convert.ToInt32(ddlTaartSoort.SelectedValue)) != null && txtAmount.Text != "" && txtAmount.Text != "0")
+            {
+
+                decimal objDecimel = Convert.ToDecimal(entity.GetCakePrice(Convert.ToInt32(ddlTaartSoort.SelectedValue)).First());
+
+                int objInt = Convert.ToInt32(txtAmount.Text);
+
+                Decimal totalPrice = (objDecimel * objInt);
+
+                return totalPrice;
+
+            }
+            else
+                return 0;
+        }
+
+        protected void ddlTaartSoort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblTotalAmount.Text = Convert.ToString(CalculateTotalAmount());
+        }
+
+        protected void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+            lblTotalAmount.Text = Convert.ToString(CalculateTotalAmount());
+        }
+
     }
 }

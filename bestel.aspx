@@ -37,21 +37,32 @@
         </tr>
         <tr>
             <td style="width:50%"></td>
-            <td class="auto-style1" style="float:left">Kies een Taart : <asp:DropDownList ID="ddlTaartSoort" runat="server"></asp:DropDownList></td>
+            <td class="auto-style1" style="float:left">Kies een Taart : <asp:DropDownList ID="ddlTaartSoort" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTaartSoort_SelectedIndexChanged"></asp:DropDownList></td>
         </tr>
         <tr>
             <td></td>
         </tr>
         <tr>
             <td></td>
-            <td style=" float:left">Aantal : <asp:TextBox ID="TextBox1" runat="server" TextMode="Number" Width="35px" Height="16px"></asp:TextBox></td>
+            <td style=" float:left">Aantal : <asp:TextBox ID="txtAmount" runat="server" TextMode="Number" Width="35px" Height="16px" AutoPostBack="True" OnTextChanged="txtAmount_TextChanged">0</asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAmount" ErrorMessage="Aantal is een verplicht veld." ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="float:left;">Total Amount: <asp:Label ID="lblTotalAmount" runat="server" Text="0"></asp:Label></td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+            </td>
         </tr>
         <tr>
             <td colspan="3">
-                <asp:Button ID="btnAddToOrder" Text="Toevoegen aan order" runat="server" Height="23px" /></td>
+                <asp:Button ID="btnAddToOrder" Text="Toevoegen aan order" runat="server" Height="23px" OnClick="btnAddToOrder_Click" /></td>
         </tr>
     </table>
 </asp:Content>

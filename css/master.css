@@ -20,14 +20,14 @@ body {
 
 #logo {
     float: left;
-    width: 34%;
+    width: 1%;
     height: 65px;
     background-color: none;
 }
 
 #menuItems {
     float: left;
-    width: 33%;
+    width: 98%;
     height: 65px;
     background-color: none;
     text-align: right;
@@ -35,7 +35,7 @@ body {
 
 #welcome {
     float: left;
-    width: 33%;
+    width: 1%;
     padding: 20px 0 20px 0;
     background-color: none;
 }
