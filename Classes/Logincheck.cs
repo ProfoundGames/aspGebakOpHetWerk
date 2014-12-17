@@ -35,7 +35,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
             }
             else
             {
-                HttpContext.Current.Response.Redirect("home.aspx");
+            
                 return false;
             }
 
