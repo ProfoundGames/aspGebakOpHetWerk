@@ -44,7 +44,7 @@
         </tr>
         <tr>
             <td></td>
-            <td style=" float:left">Aantal : <asp:TextBox ID="txtAmount" runat="server" TextMode="Number" Width="35px" Height="16px" AutoPostBack="True" OnTextChanged="txtAmount_TextChanged">0</asp:TextBox>
+            <td style=" float:left">Aantal : <asp:TextBox ID="txtAmount" min="0" runat="server" TextMode="Number" Width="35px" Height="16px" AutoPostBack="True" OnTextChanged="txtAmount_TextChanged">0</asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAmount" ErrorMessage="Aantal is een verplicht veld." ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
