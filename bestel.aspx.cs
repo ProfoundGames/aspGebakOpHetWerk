@@ -15,6 +15,12 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
             if (Checks.CheckLoggedin())
             {
+
+                if (Checks.CheckAdmin())
+                {
+                    Response.Redirect("alleTaarten.aspx");
+                }
+
                 //De GridView vullen
                 int? tempOrderID = Convert.ToInt32(Session["currentOrderID"]);
 
