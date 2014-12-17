@@ -48,7 +48,9 @@
         <tr>
             <td>
                 <asp:Label ID="LbFoto" runat="server" Text="Foto"></asp:Label></td>
-            <td></td>
+            <td>
+                <asp:FileUpload ID="FuUpload" runat="server" /></td>
+            <td>    <asp:Label ID="StatusLabel" runat="server" Text="Label"></asp:Label></td>
         </tr>
         <tr>
             <td>&nbsp;

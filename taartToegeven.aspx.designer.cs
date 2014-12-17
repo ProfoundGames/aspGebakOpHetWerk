@@ -121,6 +121,24 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk {
         protected global::System.Web.UI.WebControls.Label LbFoto;
         
         /// <summary>
+        /// FuUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FuUpload;
+        
+        /// <summary>
+        /// StatusLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StatusLabel;
+        
+        /// <summary>
         /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
