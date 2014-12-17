@@ -11,7 +11,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Checks.CheckLoggedin();
+            if (!Checks.CheckLoggedin())
+            {
+                Response.Redirect("login.aspx");
+            }
 
             int userID = (int)Session["uID"];
 

@@ -11,6 +11,12 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!Checks.CheckLoggedin())
+            {
+                Response.Redirect("login.aspx");
+            }
+
             GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
 
             dgvOrderspercustomer.DataSource = objGebaksModel.GetAllOrdersPerUser(DateTime.Today);
