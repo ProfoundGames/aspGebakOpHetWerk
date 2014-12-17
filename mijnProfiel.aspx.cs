@@ -13,15 +13,6 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         {
             Checks.CheckLoggedin();
 
-            if (Session.IsNewSession)
-            {
-                Response.Redirect("login.aspx");
-            }
-            else if (Session["uID"] == null)
-            {
-                Response.Redirect("login.aspx");
-            }
-
             int userID = (int)Session["uID"];
 
             GebakOphetWerkDBEntities objProfiles = new GebakOphetWerkDBEntities();
@@ -70,7 +61,6 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void btnSaveChange_Click(object sender, EventArgs e)
         {
-
             int userID = (int)Session["uID"];
             //
             GebakOphetWerkDBEntities objEditUser = new GebakOphetWerkDBEntities();

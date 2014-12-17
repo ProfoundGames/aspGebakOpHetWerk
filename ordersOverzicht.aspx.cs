@@ -11,6 +11,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Checks.CheckAdmin();
             GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
 
             dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(DateTime.Today);

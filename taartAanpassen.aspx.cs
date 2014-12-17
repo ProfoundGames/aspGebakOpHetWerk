@@ -11,10 +11,10 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Checks.Redirect();
             GebakOphetWerkDBEntities entity = new GebakOphetWerkDBEntities();
 
-            Checks.Redirect();
+            
             if (!IsPostBack)
             {
                 ddlTaart.DataSource = entity.GetAllCakes();

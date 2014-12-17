@@ -11,7 +11,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Checks.CheckLoggedin();
         }
 
         protected void btnJa_Click(object sender, EventArgs e)
