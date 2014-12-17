@@ -24,51 +24,51 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void rbToday_CheckedChanged(object sender, EventArgs e)
         {
-            GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
-            if (!IsPostBack)
-            {
-                if (rbToday.Checked == true)
-                {
-                    vandaag = DateTime.Today;
-                    rbYesterday.Checked = false;
-                    dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(vandaag);
-                    dgvTotalOrders.DataBind();
+        //    GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
+        //    if (!IsPostBack)
+        //    {
+        //        if (rbToday.Checked == true)
+        //        {
+        //            vandaag = DateTime.Today;
+        //            rbYesterday.Checked = false;
+        //            dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(vandaag);
+        //            dgvTotalOrders.DataBind();
 
-                }
-                else if(rbYesterday.Checked == true)
-                {
-                    rbToday.Checked = false;
-                    gisteren = DateTime.Today.AddDays(-1);                   
-                    dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(gisteren);
-                    dgvTotalOrders.DataBind();
+        //        }
+        //        else if(rbYesterday.Checked == true)
+        //        {
+        //            rbToday.Checked = false;
+        //            gisteren = DateTime.Today.AddDays(-1);                   
+        //            dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(gisteren);
+        //            dgvTotalOrders.DataBind();
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
-        protected void rbYesterday_CheckedChanged(object sender, EventArgs e)
-        {
-            GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
-            if (!IsPostBack)
-            {
-                if (rbYesterday.Checked == true)
-                {
-                    rbToday.Checked = false;
-                    gisteren = DateTime.Today.AddDays(-1);
-                    dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(gisteren);
-                    dgvTotalOrders.DataBind();
+        //protected void rbYesterday_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
+        //    if (!IsPostBack)
+        //    {
+        //        if (rbYesterday.Checked == true)
+        //        {
+        //            rbToday.Checked = false;
+        //            gisteren = DateTime.Today.AddDays(-1);
+        //            dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(gisteren);
+        //            dgvTotalOrders.DataBind();
 
-                }
-                else if (rbToday.Checked == true)
-                {
-                    vandaag = DateTime.Today;
-                    rbYesterday.Checked = false;
-                    dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(vandaag);
-                    dgvTotalOrders.DataBind();
+        //        }
+        //        else if (rbToday.Checked == true)
+        //        {
+        //            vandaag = DateTime.Today;
+        //            rbYesterday.Checked = false;
+        //            dgvTotalOrders.DataSource = objGebaksModel.GetAllOrderList(vandaag);
+        //            dgvTotalOrders.DataBind();
 
-                }
+        //        }
                 
-            }
+        //    }
 
         }
     }
