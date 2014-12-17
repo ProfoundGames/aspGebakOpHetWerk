@@ -15,6 +15,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
             dgvOrderReview.DataSource = entity.GetOrderList(Convert.ToInt32(Session["currentOrderID"]));
             dgvOrderReview.DataBind();
+            Checks.CheckLoggedin();
 
         }
 

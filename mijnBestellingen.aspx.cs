@@ -11,15 +11,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session.IsNewSession)
-            {
-                Response.Redirect("login.aspx");
-            }
-            else if (Session["uID"] == null)
-            {
-                Response.Redirect("login.aspx");
-            }
-            int userID = (int)Session["uID"];
+            Checks.CheckLoggedin();
 
 
         }
