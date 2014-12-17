@@ -35,11 +35,11 @@
         </tr>
         <tr>
             <td>
-                <asp:RadioButton ID="rbToday" runat="server" Checked="True" Text="Bestellingen van vandaag" />
+                <asp:RadioButton ID="rbToday" runat="server" Checked="True" Text="Bestellingen van vandaag" OnCheckedChanged="rbToday_CheckedChanged" />
             </td>
             <td style="width: 33%"></td>
             <td>
-                <asp:RadioButton ID="rbYesterday" runat="server" Text="Bestellingen van gisteren" />
+                <asp:RadioButton ID="rbYesterday" runat="server" Text="Bestellingen van gisteren" OnCheckedChanged="rbYesterday_CheckedChanged" />
             </td>
         </tr>
         <tr>
