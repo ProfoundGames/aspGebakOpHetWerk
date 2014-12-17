@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td>
-                <table style="width:100%; background-color:red;">
+                <table style="width:100%;">
                     <tr>
                         <td style="text-align:right; width: 50%">Naam: </td>
                         <td style="text-align:left; width: 50%"">
