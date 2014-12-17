@@ -14,7 +14,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
         protected void Page_Load(object sender, EventArgs e)
             {
              Checks.Redirect();
-            GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
+             GebakOphetWerkDBEntities objGebaksModel = new GebakOphetWerkDBEntities();
            
             dgvUser.DataSource = objGebaksModel.GetallUsers();
             dgvUser.DataBind();
@@ -26,7 +26,7 @@ namespace aspGebakOpHetWerk.aspGebakOpHetWerk
 
         protected void btnactief_Click(object sender, EventArgs e)
         {
-           
+            GebakOphetWerkDBEntities objUserEdit = new GebakOphetWerkDBEntities();
         }
     }
 
