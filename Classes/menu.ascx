@@ -10,7 +10,7 @@
             <asp:MenuItem Text="Username" Value="Username" Selectable="False">
                 <asp:MenuItem Text="Mijn Profiel" Value="MijnProfiel" NavigateUrl="~/aspGebakOpHetWerk/mijnProfiel.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Mijn Bestellingen" Value="Mijn Bestellingen" NavigateUrl="~/aspGebakOpHetWerk/mijnBestellingen.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Uitloggen" Value="Uitloggen" NavigateUrl="~/aspGebakOpHetWerk/login.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Uitloggen" Value="Uitloggen" NavigateUrl="~/aspGebakOpHetWerk/logoutCheck.aspx"></asp:MenuItem>
             </asp:MenuItem>
             <asp:MenuItem Text="Taarten" Value="Taarten" Selectable="False">
                 <asp:MenuItem Text="Alle Taarten" Value="AlleTaarten" NavigateUrl="~/aspGebakOpHetWerk/alleTaarten.aspx"></asp:MenuItem>
