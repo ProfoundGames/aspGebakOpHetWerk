@@ -91,7 +91,7 @@
                 <asp:Label ID="lblChange" Text="Gegevens aanpassen" runat="server"></asp:Label></td>
             <td>
                 <asp:Button ID="btnChange" Text="Edit" runat="server" OnClick="btnChange_Click" />
-                <asp:Button ID="btnSaveChange" Text="Opslaan" runat="server" OnClick="btnSaveChange_Click" />
+                <asp:Button ID="btnSaveChange" Text="Opslaan" runat="server" Visible="false" OnClick="btnSaveChange_Click" />
             </td>
         </tr>
     </table>
